@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samaila's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        // Example dynamic data
+        const stats = {
+            clients: 75,
+            projects: 120,
+            hours: 1800,
+            awards: 12
+        };
+    
+        // Update statistics on page load
+        document.getElementById("clients-count").innerText = `${stats.clients}+`;
+        document.getElementById("projects-count").innerText = `${stats.projects}+`;
+        document.getElementById("hours-count").innerText = `${stats.hours}+`;
+        document.getElementById("awards-count").innerText = `${stats.awards}+`;
+        document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+}); 
+
+    </script>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Samaila's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section id="hero" class="d-flex align-items-center" style="background-image: url('./assets/images/IMG-20241128-WA0020.jpg'); background-size: cover; background-position: center; height: 100vh;">
+    <div class="container text-center text-white">
+        <h1 class="display-4">I am <span id="name">Samaila Samaila</span></h1>
+        <h2 class="lead">
+            <span id="typing-animation" class="typed-text"></span>
+        </h2>
+    </div>
+</section>
+
+<script>
+    // Array of roles
+    const roles = [
+        "Web Designer",
+        "Web Developer",
+        "UI/UX Developer",
+        "Freelancer",
+        "App Developer",
+        "Database Manager",
+        "Cloud Integrator",
+        "Web Security Expert"
+    ];
+
+    let roleIndex = 0; // Initial role index
+    let charIndex = 0; // Initial character index
+    const typingElement = document.getElementById("typing-animation");
+    
+    function typeText() {
+        // Typing the text one by one
+        if (charIndex < roles[roleIndex].length) {
+            typingElement.innerHTML += roles[roleIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, 100); // Call the function recursively
+        } else {
+            // Once the word is typed, wait for a while and then delete it
+            setTimeout(() => {
+                deleteText();
+            }, 2000);
+        }
+    }
+
+    function deleteText() {
+        // Deleting the text one by one
+        if (charIndex > 0) {
+            typingElement.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(deleteText, 50); // Call the function recursively
+        } else {
+            // Once the text is deleted, move to the next role
+            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeText, 500); // Start typing the next role after a short delay
+        }
+    }
+
+    // Start typing animation when the page loads
+    window.onload = () => {
+        typeText();
+    };
+</script>
+
+
+    <!-- About Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Profile Picture and Name -->
+            <div class="col-md-4 text-center">
+                <img src="./assets/images/IMG-20240830-WA0004.jpg" alt="Profile Picture" class="img-fluid rounded-circle mb-3" width="200">
+                <h3>Samaila Samaila</h3>
+            </div>
+
+            <!-- Profile Info and Skills -->
+            <div class="col-md-8">
+                <div class="about-info">
+                    <h4>Profile</h4>
+                    <p><strong>Email:</strong> <a href="mailto:samailasamailatech@gmail.com">samailasamailatech@gmail.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+2348090627817">+234 0809 062 7817</a>, <a href="tel:+2349160814441">+234 0916 081 4441</a></p>
+                    
+                    <h4>Skills</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">HTML/CSS - 90%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">JavaScript - 85%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">React.js - 80%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Node.js - 75%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">D3.js - 60%</div>
+                    </div>
+
+                    <h4>About Me</h4>
+                    <p>I am a passionate self-taught web developer with experience in front-end and back-end technologies. I love creating user-friendly and responsive web applications. I am always eager to learn new things and strive to improve my skills.</p>
+
+                    <h4>Resume</h4>
+                    <p><a href="./assets/resume/Samaila_Samaila_Comprehensive_CV.docx" class="btn btn-primary" download>Download Resume</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+   <!-- Services Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2>My Services</h2>
+        <p class="lead mb-5">Here are some of the services I provide:</p>
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-item">
+                <i class="fas fa-laptop-code service-icon"></i>
+                <h5>Web Development</h5>
+                <p>
+                    I create responsive and dynamic websites tailored to your needs using modern web technologies.
+                </p>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-item">
+                <i class="fas fa-paint-brush service-icon"></i>
+                <h5>UI/UX Design</h5>
+                <p>
+                    I design intuitive and visually appealing interfaces for a seamless user experience.
+                </p>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-item">
+                <i class="fas fa-database service-icon"></i>
+                <h5>Database Management</h5>
+                <p>
+                    I design, manage, and optimize relational databases to ensure efficient data handling.
+                </p>
+            </div>
+            <!-- Service 4 -->
+            <div class="service-item">
+                <i class="fas fa-mobile-alt service-icon"></i>
+                <h5>Mobile Web Development</h5>
+                <p>
+                    I build responsive mobile-first web applications that perform flawlessly on all devices.
+                </p>
+            </div>
+            <!-- Service 5 -->
+            <div class="service-item">
+                <i class="fas fa-cloud service-icon"></i>
+                <h5>Cloud Integration</h5>
+                <p>
+                    I help integrate applications with cloud services like AWS to enhance scalability and reliability.
+                </p>
+            </div>
+            <!-- Service 6 -->
+            <div class="service-item">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h5>Web Security</h5>
+                <p>
+                    I implement secure web practices to protect applications against vulnerabilities and threats.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Statistics Section -->
+<section id="statistics" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2>Achievements</h2>
+        <p class="lead mb-5">Here are some of the milestones I’ve achieved:</p>
+        <div class="stats-grid">
+            <!-- Clients -->
+            <div class="stat-item">
+                <i class="fas fa-user-friends stat-icon"></i>
+                <h3 id="clients-count">50+</h3>
+                <p>Clients</p>
+            </div>
+            <!-- Projects -->
+            <div class="stat-item">
+                <i class="fas fa-briefcase stat-icon"></i>
+                <h3 id="projects-count">100+</h3>
+                <p>Projects</p>
+            </div>
+            <!-- Hours of Support -->
+            <div class="stat-item">
+                <i class="fas fa-clock stat-icon"></i>
+                <h3 id="hours-count">1,500+</h3>
+                <p>Hours of Support</p>
+            </div>
+            <!-- Awards -->
+            <div class="stat-item">
+                <i class="fas fa-award stat-icon"></i>
+                <h3 id="awards-count">10+</h3>
+                <p>Awards</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Portfolio Section -->
+<section id="portfolio" class="py-5">
+    <div class="container text-center">
+        <h2>My Work</h2>
+        <p class="lead mb-5">Here are some of the projects I’ve worked on:</p>
+        <div class="row">
+            <!-- Project 1: Music App -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/DALL·E 2024-11-30 07.25.51 - A visually appealing interface of a music app. The screen shows a vibrant music player design with a dark theme and colorful gradient accents. The lay.webp" class="card-img-top" alt="Music App">
+                    <div class="card-body">
+                        <h5 class="card-title">Music App</h5>
+                        <p class="card-text">
+                            A Next.js app where users can listen to songs, create playlists, and manage playback.
+                        </p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Cash Register App -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/DALL·E 2024-11-30 07.12.36 - A sleek and modern user interface of a cash register application. The screen displays features such as input fields for 'Price', 'Cash Provided', and .webp" class="card-img-top" alt="Cash Register App">
+                    <div class="card-body">
+                        <h5 class="card-title">Cash Register App</h5>
+                        <p class="card-text">
+                            A JavaScript app for calculating change due, including advanced change scenarios.
+                        </p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Markdown Previewer -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/DALL·E 2024-11-30 07.18.45 - A sleek and modern Markdown Previewer app interface. The interface displays a split-screen design, with the left side showing a text editor for typing.webp" class="card-img-top" alt="Markdown Previewer">
+                    <div class="card-body">
+                        <h5 class="card-title">Markdown Previewer</h5>
+                        <p class="card-text">
+                            A React app for writing and previewing Markdown text in real-time.
+                        </p>
+                        <a href="https://samailatech.github.io/markdown-previewer/" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Drum Machine -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/WhatsApp Image 2024-11-30 at 7.33.42 AM.jpeg" class="card-img-top" alt="Drum Machine">
+                    <div class="card-body">
+                        <h5 class="card-title">Drum Machine</h5>
+                        <p class="card-text">
+                            An interactive drum machine built with React for creating custom beats.
+                        </p>
+                        <a href="https://samailatech.github.io/drum-machine/" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: JavaScript Calculator -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/WhatsApp Image 2024-11-30 at 7.44.40 AM.jpeg" class="card-img-top" alt="JavaScript Calculator">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Calculator</h5>
+                        <p class="card-text">
+                            A fully functional calculator built with JavaScript, styled for a modern UI.
+                        </p>
+                        <a href="https://samailatech.github.io/javascript-calculator/" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: 25 + 5 Clock -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/WhatsApp Image 2024-11-30 at 7.52.02 AM.jpeg" class="card-img-top" alt="25 + 5 Clock">
+                    <div class="card-body">
+                        <h5 class="card-title">25 + 5 Clock</h5>
+                        <p class="card-text">
+                            A Pomodoro clock built with React, offering customizable work and break times.
+                        </p>
+                        <a href="https://samailatech.github.io/25-5-clock-app/" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/WhatsApp Image 2024-11-30 at 8.22.09 AM.jpeg" class="card-img-top" alt="random-quote-machine">
+                    <div class="card-body">
+                    <h5 class="card-title">Random Quote Machine</h5>
+                    <p class="card-text">A React app to generate and display random quotes.</p>
+                    <a href="https://samailatech.github.io/random-quote-machine/" class="btn btn-primary">View Project</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/WhatsApp Image 2024-11-30 at 8.31.02 AM.jpeg" class="card-img-top" alt="bar-chart-project">
+                    <div class="card-body">
+                    <h5 class="card-title">Bar Chart Project</h5>
+                    <p class="card-text">A bar chart built using D3.js to visualize data.</p>
+                    <a href="https://samailatech.github.io/bar-chart-project/" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FAQ Section -->
+<section id="faq" class="py-5">
+    <div class="container">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <p class="lead text-center mb-5">Have questions? Here are some answers to commonly asked queries:</p>
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq1-heading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                        What services do you provide?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        I offer web development, UI/UX design, database management, cloud integration, and more. Check out my services section for a detailed list.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq2-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                        How long does it take to complete a project?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The timeline varies based on the project's complexity. Typically, small projects take 1–2 weeks, while larger ones can take several months.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq3-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                        What technologies do you use?
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        I specialize in HTML, CSS, JavaScript, React.js, Node.js, Bootstrap, and various database management systems like MySQL and PostgreSQL.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq4-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                        Do you offer ongoing support after project completion?
+                    </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, I provide maintenance, updates, and support for completed projects as per the client's needs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center">Contact Me</h2>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h4>Contact Information</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <h5>Address</h5>
+                        <p>No. 28 Randa Close, Narayi Bayan Duste, Kaduna, Nigeria</p>
+                    </div>
+                    <!-- Phone -->
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <h5>Call Me</h5>
+                        <p><a href="tel:+2348090627817">+234 809 062 7817</a></p>
+                        <p><a href="tel:+2349160814441">+234 916 081 4441</a></p>
+                    </div>
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <h5>Email Me</h5>
+                        <p><a href="mailto:samailasamailatech@gmail.com">samailasamailatech@gmail.com</a></p>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <h4>Send Me a Message</h4>
+                    <form action="submit-form.php" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h4>Connect with Me</h4>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/samaila-samaila-9175a0315/" class="text-white mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://github.com/samailatech" class="text-white mx-2"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="https://facebook.com/De tech guy samaila" target="_blank" class="text-white mx-2">
+                    <i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://wa.me/2349160814441" target="_blank" class="text-white mx-2">
+                    <i class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="https://t.me/samaila tech" target="_blank" class="text-white mx-2">
+                    <i class="fab fa-telegram-plane fa-2x"></i></a>
+                    <a href="https://digitalnomad.com/samailasamaila337" target="_blank" class="text-white mx-2">
+                        <i class="fas fa-globe fa-2x"></i></a>
+            </div>
+            <p class="mt-3 mb-0">© 2024 Samaila Samaila. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
