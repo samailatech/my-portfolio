@@ -56,7 +56,7 @@
 
 <!-- Hero Section -->
 <!-- Hero Section -->
-<section id="hero" class="d-flex align-items-center" style="background-image: url('./assets/images/IMG-20241128-WA0020.jpg'); background-size: cover; background-position: center; height: 100vh;">
+<section id="hero" class="d-flex align-items-center" style="background-image: url('./assets/images/my_picture.png'); background-size: cover; background-position: center 20%; background-repeat: no-repeat; height: 100vh;">
     <div class="container text-center text-white">
         <h1 class="display-4">I am <span id="name">Samaila Samaila</span></h1>
         <h2 class="lead">
@@ -75,7 +75,7 @@
         "App Developer",
         "Database Manager",
         "Cloud Integrator",
-        "Web Security Expert"
+        "Web Security Expert",
     ];
 
     let roleIndex = 0; // Initial role index
@@ -145,6 +145,9 @@
                     </div>
                     <div class="progress mb-3">
                         <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Node.js - 75%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">Svelte.js - 70%</div>
                     </div>
                     <div class="progress mb-3">
                         <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">D3.js - 60%</div>
@@ -263,6 +266,34 @@
         <h2>My Work</h2>
         <p class="lead mb-5">Here are some of the projects I’ve worked on:</p>
         <div class="row">
+            <!-- Project: Sam Restaurant -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/sam-restaurant-thumbnail.jpg" class="card-img-top featured-project-img" alt="Sam Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">Sam Restaurant</h5>
+                        <p class="card-text">
+                            A modern Next.js restaurant template featuring menu highlights, events, guest reviews, and reservation UI.
+                        </p>
+                        <a href="https://github.com/samailatech/sam-restaurant" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Rondwell -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="./assets/images/rondwell-banner.png" class="card-img-top featured-project-img" alt="Rondwell">
+                    <div class="card-body">
+                        <h5 class="card-title">Rondwell</h5>
+                        <p class="card-text">
+                            A collaborative event management platform with organizer tools, analytics, and workflow-focused dashboard experiences.
+                        </p>
+                        <a href="https://rondwell.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Project 1: Music App -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100">
@@ -272,7 +303,7 @@
                         <p class="card-text">
                             A Next.js app where users can listen to songs, create playlists, and manage playback.
                         </p>
-                        <a href="#" class="btn btn-primary">View Project</a>
+                        <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -286,7 +317,7 @@
                         <p class="card-text">
                             A JavaScript app for calculating change due, including advanced change scenarios.
                         </p>
-                        <a href="#" class="btn btn-primary">View Project</a>
+                        <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -300,7 +331,7 @@
                         <p class="card-text">
                             A React app for writing and previewing Markdown text in real-time.
                         </p>
-                        <a href="https://samailatech.github.io/markdown-previewer/" class="btn btn-primary">View Project</a>
+                        <a href="https://samailatech.github.io/markdown-previewer/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -314,7 +345,7 @@
                         <p class="card-text">
                             An interactive drum machine built with React for creating custom beats.
                         </p>
-                        <a href="https://samailatech.github.io/drum-machine/" class="btn btn-primary">View Project</a>
+                        <a href="https://samailatech.github.io/drum-machine/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -328,7 +359,7 @@
                         <p class="card-text">
                             A fully functional calculator built with JavaScript, styled for a modern UI.
                         </p>
-                        <a href="https://samailatech.github.io/javascript-calculator/" class="btn btn-primary">View Project</a>
+                        <a href="https://samailatech.github.io/javascript-calculator/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -342,7 +373,7 @@
                         <p class="card-text">
                             A Pomodoro clock built with React, offering customizable work and break times.
                         </p>
-                        <a href="https://samailatech.github.io/25-5-clock-app/" class="btn btn-primary">View Project</a>
+                        <a href="https://samailatech.github.io/25-5-clock-app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -352,7 +383,7 @@
                     <div class="card-body">
                     <h5 class="card-title">Random Quote Machine</h5>
                     <p class="card-text">A React app to generate and display random quotes.</p>
-                    <a href="https://samailatech.github.io/random-quote-machine/" class="btn btn-primary">View Project</a>
+                    <a href="https://samailatech.github.io/random-quote-machine/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 </div>
             </div>
@@ -362,7 +393,7 @@
                     <div class="card-body">
                     <h5 class="card-title">Bar Chart Project</h5>
                     <p class="card-text">A bar chart built using D3.js to visualize data.</p>
-                    <a href="https://samailatech.github.io/bar-chart-project/" class="btn btn-primary">View Project</a>
+                    <a href="https://samailatech.github.io/bar-chart-project/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
             </div>
@@ -411,7 +442,7 @@
                 </h2>
                 <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        I specialize in HTML, CSS, JavaScript, React.js, Node.js, Bootstrap, and various database management systems like MySQL and PostgreSQL.
+                        I specialize in HTML, CSS, JavaScript, React.js, Svelte.js, Node.js, Bootstrap, and various database management systems like MySQL and PostgreSQL.
                     </div>
                 </div>
             </div>
